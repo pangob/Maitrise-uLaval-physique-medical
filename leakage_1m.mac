@@ -1,0 +1,28 @@
+/control/verbose 1
+/tracking/verbose 0
+/run/verbose 1
+/event/verbose 0
+
+/control/execute GPS.in                     # Defaults for the GeneralParticleSource
+
+
+#
+# define scoring probe
+#
+
+
+/score/create/probe Probes 0.5 cm
+/score/probe/material G4_WATER
+
+#centre-phantom
+/score/probe/locate 0. 0. 0. cm
+
+#centre-source
+/score/probe/locate 0. 48.90  0. cm
+
+#centre des triangles
+/score/probe/locate 50 -20  50 cm
+/score/probe/locate -50 -20 -50 cm
+/score/probe/locate 50 -20 -50 cm
+/score/probe/locate -50 -20 50 cm
+
