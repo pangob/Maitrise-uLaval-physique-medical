@@ -1,0 +1,47 @@
+/control/verbose 1
+/tracking/verbose 0
+/run/verbose 1
+/event/verbose 0
+
+/control/execute GPS.in                     # Defaults for the GeneralParticleSource
+
+
+#
+# define scoring probe
+#
+
+
+/score/create/probe Probes 0.5 cm
+/score/probe/material G4_WATER
+
+#centre-phantom
+/score/probe/locate 0. 0. 0. cm
+
+#Sud
+/score/probe/locate 0. 24.55  0. cm
+/score/probe/locate 0. 24.55  28.7 cm
+/score/probe/locate 0. 24.55 -28.7 cm
+
+#Est
+/score/probe/locate 0 48.0  -33.7 cm
+/score/probe/locate 0 39.35 -33.7 cm
+
+#sud est
+/score/probe/locate -10.3753 26.501 0 cm
+
+#sud ouest
+/score/probe/locate  10.3753 26.501 0 cm
+
+/score/quantity/doseDeposit Gray gray
+/score/close
+/score/list
+/run/setCut 0.1 mm
+/seed/setSeeds 1468731832 1974501219
+/run/numberOfThreads 24
+/run/initialize
+/run/beamOn 100000000
+
+/score/dumpQuantityToFile Probes Gray Leakage_radiation_1_4mm_0.out
+
+
+
