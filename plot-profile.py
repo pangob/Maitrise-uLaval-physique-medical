@@ -5,7 +5,7 @@ plt.rcParams['font.family'] = 'Arial'
 ax = plt.subplot(111)
 
 # Tracé du profil de dose relative
-ax.plot(axis, (dose / dose[52]) * 100,'-',color='black')  # Normalisation de la dose à la valeur centrale
+ax.plot(axis_values, (total_values / total_values[52]) * 100,'-',color='black')  # Normalisation de la dose à la valeur centrale. 52 est la valeur centrale car grille 105 x 105 x 105
 
 # Ajouter des lignes verticales pour indiquer les bords du champ 
 plt.axvline(x=7, color='red', linestyle='--')
